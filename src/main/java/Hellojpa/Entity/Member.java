@@ -23,6 +23,17 @@ public class Member {
     private MemberType memberType;
 
 
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", team=" + team +
+                ", regDate=" + regDate +
+                ", memberType=" + memberType +
+                '}';
+    }
 
     public Long getId() {
         return id;
