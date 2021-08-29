@@ -19,12 +19,6 @@ public class Main {
         //트랜잭션을 시작,데이터베이스에서 접근해서 커넥션을 들고온 다음 트랜잭션을 실행행
         tx.begin();
     try {
-        Member member = new Member();
-        member.setId(101L);
-        member.setName("HelloJPA");
-        em.persist(member);
-
-
 
         tx.commit();
     }catch (Exception e) {
