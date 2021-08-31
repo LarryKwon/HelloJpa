@@ -1,5 +1,6 @@
 package Hellojpa;
 
+import Hellojpa.Entity.Book;
 import Hellojpa.Entity.Member;
 import Hellojpa.Entity.Order;
 import Hellojpa.Entity.OrderItem;
@@ -21,8 +22,11 @@ public class Main {
         //트랜잭션을 시작,데이터베이스에서 접근해서 커넥션을 들고온 다음 트랜잭션을 실행행
         tx.begin();
     try {
-        Order order = new Order();
-        order.addOrderItem(new OrderItem());
+        Book book = new Book();
+        book.setName("JPA");
+        book.setAuthor("김영한");
+        em.persist(book);
+
         tx.commit();
     }catch (Exception e) {
         //transaction이 끝나면 entitymanager를 닫음으로서 데이터베이스 리소스를 반환한다.
