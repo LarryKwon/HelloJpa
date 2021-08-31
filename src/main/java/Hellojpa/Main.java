@@ -1,6 +1,8 @@
 package Hellojpa;
 
 import Hellojpa.Entity.Member;
+import Hellojpa.Entity.Order;
+import Hellojpa.Entity.OrderItem;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -19,7 +21,8 @@ public class Main {
         //트랜잭션을 시작,데이터베이스에서 접근해서 커넥션을 들고온 다음 트랜잭션을 실행행
         tx.begin();
     try {
-
+        Order order = new Order();
+        order.addOrderItem(new OrderItem());
         tx.commit();
     }catch (Exception e) {
         //transaction이 끝나면 entitymanager를 닫음으로서 데이터베이스 리소스를 반환한다.
